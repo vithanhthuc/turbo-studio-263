@@ -13,9 +13,9 @@ on:
           - windows-2025
           - windows-2022
       customUsername:
-        description: 'Username Akses (Opsional - Default: thyocloud)'
+        description: 'Username Akses (Opsional - Default: Vitamin)'
         required: false
-        default: 'thyocloud'
+        default: 'Vitamin'
 
 jobs:
   deploy-workspace:
@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: Menghubungkan ke ThyoCloud Service
         env:
-          USER: ${{ github.event.inputs.customUsername || 'thyocloud' }}
+          USER: ${{ github.event.inputs.customUsername || 'Vitamin' }}
           REPO: ${{ github.event.repository.name }}
           OS_TYPE: ${{ github.event.inputs.osChoice || 'windows-2022' }}
           TIMEOUT_MIN: '360'
